@@ -93,26 +93,52 @@ padding:20px ;
 .Progression>span{
     color: #796A59;
 }
+
 input{
     appearance: none;
+}
+.section-option{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas: 
+    "titre remarque"
+    "chois    chois";
+    gap: 10px;
+    margin-bottom: 24px;
+}
+.section-titre{
+    grid-area: titre;
+}
+.section-remarque{
+    grid-area: remarque;
+}
+.chois-detail{
+    display: grid;
+    grid-template-rows: auto; 
+    border: 2px solid green;
+    padding: 10px;
+    border-radius:15px ;
+}
+.chois-detail>label{
+    display: grid;
+    grid-template-columns: auto;
     
 }
-.section2{
+.option-grid.cols-2{
+    grid-area: chois;
     display: grid;
-    padding: 0px 10px;
-    gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-left: 20px;
 }
-.section2-chois{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    align-items: start;
+.option-grid.cols-3{
+    grid-area: chois;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-left: 20px;
+    gap: 30px;
 }
-.titre-option{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+
 .titre-option>h2{
    font-family: DM Sans,sans-serif;
 font-weight: 700;
