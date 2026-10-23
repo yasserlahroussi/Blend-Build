@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="BRUMEconfig.css">
-    <title>Document</title>
+    <script src="partiejs.js" defer></script>
+    <title>BRUME / config</title>
 </head>
 
 <body>
@@ -20,8 +21,9 @@
                     <li><a href="#">Besoin d’aide ?</a></li>
                 </ul>
             </nav>
-            <div>
+            <div class="logo-panier">
                 <img class="Panier" src="Panier.png" alt="Panier">
+                <div id="number-one">1</div>
             </div>
         </div>
         <br>
@@ -31,8 +33,14 @@
     <main>
         <p class="Progression">01 Personnaliser — <span>02 Récapitulatif</span></p>
         <section class="main">
-            <section>
+            <section class="phase-num1">
+                <div class="titre-bilan1" id="titre-bilan">
+                    <h4>VOTRE CRÉATION EST PRÊTE</h4>
+                    <h2>Votre moment café,
+                        exactement comme vous l’aimez.</h2>
+                </div>
                 <div class="Aperçu-produit-en-direct">
+
                     <div class="titre-de-photo">
                         <p>LE CAFÉ, À VOTRE FAÇON</p> <span>01 / 04</span>
                     </div>
@@ -40,129 +48,135 @@
                     <p>Un petit rituel. Beaucoup de vous.</p>
                     <h6>ESPRESSO · M · AVOINE · CARAMEL</h6>
                 </div>
+                <div class="commande1" id="titre-apre commande">
+                    <div>
+                        <p>Votre café signature</p>
+                        <span>Espresso · M · Avoine · Caramel</span>
+                    </div>
+                    <div ><button id="button-modify" onclick="hahaha()">Modifier</button></div>
+                </div>
             </section>
             <section class="section2">
-                <div class="Introduction">
+                <div class="Introduction" id="Introduction">
                     <p>VOTRE COFFEE SHOP, AUTREMENT.</p>
                     <h1>Votre pause,
                         votre signature.</h1>
                     <span>Quelques envies, un café unique. <br>
                         À vous de composer la suite.</span>
                 </div>
-                <div class="section2">
-                    <div>
-                        <section class="section-option">
-                            <h3 class="section-titre">01 La base</h3>
-                            <span class="section-remarque">Choix unique</span>
-                            <div class="option-grid cols-2">
-                            <div class="chois-detail">
-                                <label>
-                                <span class="chois-titre">Espresso</span>
-                                <span class="chois-prix">18,00 DH</span>
-                                <input type="radio" name="chois1">
-                                </label>
-                                
-                            </div>
-                            <div class="chois-detail">
-                                <label>
-                                <span class="chois-titre">Filtre</span>
-                                <span class="chois-prix">16,00 DH</span>
-                                <input type="radio" name="chois1">
-                                </label>
-                            </div>
-                            </div>
-                        </section>
-                        <section class="section-option">
-                            <h3 class="section-titre">02 La taille</h3>
-                            <span class="section-remarque">Choix unique</span>
-                            <div class="option-grid cols-3">
-                            <div class="chois-detail">
-                                <label>
-                                <span class="chois-titre">S·150 ml</span>
-                                <span class="chois-prix">Inclus</span>
-                                <input type="radio" name="chois2" >
-                                </label>
-                            </div>
-                            <div class="chois-detail">
-                                <label>
-                                <span class="chois-titre">M·250 ml</span>
-                                <span class="chois-prix">+ 4,00 DH</span>
-                                <input type="radio" name="chois2">
-                                </label>
-                            </div>
-                            <div class="chois-detail">
-                                <label>
-                                <span class="chois-titre">L·350 ml</span>
-                                <span class="chois-prix">+ 8,00 DH</span>
-                                <input type="radio" name="chois2">
-                                </label>
-                            </div>
-                            </div>
-                        </section>
-                         <section class="section-option">
-                            <h3 class="section-titre">03 Le lait</h3>
-                            <span class="section-remarque">Choix unique</span>
-                            <div class="option-grid cols-3">
-                            <div class="chois-detail">
-                                <label>
-                                <span class="chois-titre">Vache</span>
-                                <span class="chois-prix">Inclus</span>
-                                <input type="radio" name="chois3">
-                                </label>
-                            </div>
-                            <div class="chois-detail">
-                                <label>
-                                <span class="chois-titre">Avoine</span>
-                                <span class="chois-prix">+ 4,00 DH</span>
-                                <input type="radio" name="chois3">
-                                </label>
-                            </div>
-                            <div class="chois-detail">
-                                <label>
-                                <span class="chois-titre">Amande</span>
-                                <span class="chois-prix">+ 5,00 DH</span>
-                                <input type="radio" name="chois3">
-                                </label>
-                            </div>
-                            </div>
-                        </section>
-                        <section class="section-option">
-                            <h3 class="section-titre">04 La touche en plus</h3>
-                            <span class="section-remarque">Plusieurs choix</span>
-                            <div class="option-grid cols-2">
-                            <div class="chois-detail">
-                                <label>
-                                <span class="chois-titre">Caramel</span>
-                                <span class="chois-prix">+ 3,00 DH</span>
-                                <input type="checkbox">
-                                </label>
-                            </div>
-                            <div class="chois-detail">
-                                <label>
-                                <span class="chois-titre">Vanille</span>
-                                <span class="chois-prix">+ 3,00 DH</span>
-                                <input type="checkbox">
-                                </label>
-                            </div>
-                            </div>
-                        </section>
+                <div class="option" id="option">
+                    <div style="grid-area: titre1;">
+                        <h3>01 La base</h3>
                     </div>
-                    <p class="Information-Prix-dynamique">Le prix évolue selon vos choix. Vous pourrez les modifier au
-                        récapitulatif.</p>
-            </section>
+                    <div class="remarque" style="grid-area: remarque1;"><span>Choix unique</span></div>
+
+                    <label class="Base" style="grid-area: chois1;">
+                        <p class="base-espresso-name"></p>
+                        <span class="base-espresso-price base"></span>
+                        <input required type="radio" name="chois1" class="chois" id="base1">
+                    </label>
+                    <label class="Base" style="grid-area: chois2;">
+                        <p class="base-filtre-name"></p>
+                        <span class="base-filtre-price base"></span>
+                        <input type="radio" name="chois1" class="chois" id="base1">
+                    </label>
+                    <div style="grid-area: titre2;">
+                        <h3>02 La taille</h3>
+                    </div>
+                    <div class="remarque" style="grid-area: remarque2;"><span>Choix unique</span></div>
+                    <label class="Taille" style="grid-area: chois3;">
+                        <p class="taille-s-name"></p>
+                        <span class="taille-s-price taille"></span>
+                        <input required id="input3" type="radio" name="chois2" class="chois">
+                    </label>
+                    <label class="Taille" style="grid-area: chois4;">
+                        <p class="taille-m-name"></p>
+                        <span class="taille-m-price taille"></span>
+                        <input id="input4" type="radio" name="chois2" class="chois">
+                    </label>
+                    <label class="Taille" style="grid-area: chois5;">
+                        <p class="taille-l-name"></p>
+                        <span class="taille-l-price taille"></span>
+                        <input id="input5" type="radio" name="chois2" class="chois">
+                    </label>
+                    <div style="grid-area: titre3;">
+                        <h3>03 Le lait</h3>
+                    </div>
+                    <div class="remarque" style="grid-area: remarque3;"><span>Choix unique</span></div>
+
+                    <label class="Lait" style="grid-area: chois6;">
+                        <p class="lait-vache-name"> </p>
+                        <span class="lait-vache-price lait"></span>
+                        <input id="input6" type="radio" name="chois3" class="chois">
+                    </label>
+
+                    <label class="Lait" style="grid-area: chois7;">
+                        <p class="lait-avoine-name"></p>
+                        <span class="lait-avoine-price lait"></span>
+                        <input id="input7" type="radio" name="chois3" class="chois">
+                    </label>
+
+                    <label class="Lait" style="grid-area: chois8;">
+                        <p class="lait-amande-name"></p>
+                        <span class="lait-amande-price lait"></span>
+                        <input id="input8" type="radio" name="chois3" class="chois">
+                    </label>
+                    <div style="grid-area: titre4;">
+                        <h3>04 La touche en plus</h3>
+                    </div>
+                    <div class="remarque" id="remarque4" style="grid-area: remarque4;"><span>Plusieurs choix</span>
+                    </div>
+
+                    <label class="Supplement" style="grid-area: chois9;">
+                        <p class="supplements-caramel-name"></p>
+                        <span class="supplements-caramel-price supplements"></span>
+                        <input id="input9" type="checkbox">
+                    </label>
+
+                    <label class="Supplement" style="grid-area: chois10;">
+                        <p class="supplements-vanille-name"></p>
+                        <span class="supplements-vanille-price supplements"></span>
+                        <input id="input10" type="checkbox">
+                    </label>
+                </div>
+                <p class="Information-Prix-dynamique" id="usless-info">Le prix évolue selon vos choix. Vous pourrez les modifier au
+                    récapitulatif.</p>
+                      <section class="section-bilan" id="section-bilan">
+            <p class="remarque-bilan">✓ Sélection ajoutée</p>
+            <h2 class="h2-bilan">Votre récapitulatif</h2>
+            <span class="span-bilan">Une création personnalisée · Quantité : 1</span>
+            <br>
+            <hr>
+            <div class="bilan">
+              
+            </div>
+            <hr>
+              <div class="total_bilan">
+               
+            </div>
+            <hr>
+            <span class="span-the-end">Prix de cette sélection · aucun paiement effectué.</span>
+            <a class="lien-modification" href="http://127.0.0.1:5500/BRUMEconfig.html">Créer un autre café →</a>
+            <p class="p-the-end">Votre sélection reste modifiable à tout moment.</p>
         </section>
-        <section class="section3-total">
+            </section>
+          
+        </section>
+          
+        <section class="section3-total" id="section3-total">
             <div class="Total">
                 <span>Total</span>
-                <p>100</p>
+                <p id="Total"> 0</p>
             </div>
-            <button>Ajouter au panier</button>
+            <button onclick="bilanTotal() ;page_suivant()">Ajouter au panier</button>
         </section>
+      
     </main>
     <footer>
         <div class="footer-part1">BRUME — Le goût de votre rythme.</div>
         <div class="footer-not-phone">Une création unique, la vôtre.</div>
     </footer>
+
 </body>
 
 </html>
