@@ -86,7 +86,8 @@ bilan.innerHTML = ""
 }
 function page_suivant() {
   const base22 = document.getElementById('base1')
-  if (totalGlobale!=0 && base22.checked) {
+  const base2 = document.getElementById('base2')
+  if (totalGlobale!=0 && (base22.checked || base2.checked)) {
     
   const num1 = document.getElementById('number-one')
   const introduction = document.getElementById('Introduction');
