@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="BRUMEconfig.css">
+    <script src="partie2js.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="en-tete-header">Du grain à votre tasse. Un café qui vous ressemble.</div>
+        <div>
+            <img src="Signature de marque.png" alt="logo de site web">
+            <nav>
+                <ul>
+                    <li><a href="#" id="active">L’atelier café</a></li>
+                    <li><a href="#">Notre savoir-faire</a></li>
+                    <li><a href="#">Besoin d’aide ?</a></li>
+                </ul>
+            </nav>
+            <div class="logo-panier">
+                <img class="Panier" src="Panier.png" alt="Panier">
+                <div id="number-one">1</div>
+            </div>
+        </div>
+        <br>
+        <hr>
+    </header>
+    <p class="Progression">01 Personnaliser — 02 Récapitulatif — <span> 03 Paiement </span></p>
+    <div class="titre-bilan1" id="titre-bilan" style="display: flex; flex-direction: column; gap: 10px;">
+        <h4>Votre panier</h4>
+        <h2>Votre commande, prête à partir.</h2>
+        <h6>Ajustez vos quantités, ajoutez un dernier produit, puis finalisez en quelques champs.</h6>
+    </div>
+    <main class="main2">
+
+        <section>
+            <div class="section-de-article">
+                <div class="titre-panier">
+                    <p>Votre panier</p>
+                    <p id="total-article-de-panier"></p>
+                </div>
+                <br>
+
+                <div id="articles-panier">
+
+                </div>
+                <br>
+            </div>
+            <div
+                style="display: flex; justify-content: space-around;border: 3px dashed #000000;height: 64px;width: 90%; align-items: center;border-radius: 20px;margin: 5%;">
+                <button id="button-ajoute" style="border:none;background-color: transparent;margin: 20px;">+ Ajouter un
+                    autre produit</button>
+            </div>
+            <div id="total-bilan">
+                <div>Le total est:</div>
+                <div id="total-en-chifre"></div>
+            </div>
+            <div class="model" id="model-id">
+                <div class="model-contenu">
+                    <div>
+                        <label id="barre-de-recherche">
+                            Recherche:<input id="barre" type="text">
+                            <button id="close" style="width: 20px;height: 20px;">x</button>
+                        </label>
+                    </div>
+                    <div id="resultat-de-recherche">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section-de-paiment">
+            <div class="input-de-paiment">
+                <form action="">
+                    <p class="remarque-bilan">Paiement sécurisé</p>
+                    <p class="h2-bilan">Vos informations</p>
+                    <label for="" class="input-inline">
+                        <label for="" class="input-inline1" style="width: 100px;"><p id="span-bilan">Prènom:</p><input type="text" required></label>
+                        <label for="" class="input-inline1" style="width: 100px;"><p id="span-bilan">Nom:</p><input type="text" required></label>
+                    </label>
+                    <label for="" class="input-inline">
+                    <label for=""><p id="span-bilan">E-mail:</p><input type="text"></label>
+                    <label for=""><p id="span-bilan">Adresse de livraison:</p><input type="text"></label>
+                    </label>
+                    <br>
+                    <br> 
+                    <hr style="color: grey;">
+                    <p class="h2-bilan">Carte bancaire</p>
+                    <label for="" class="input-inline"><p id="span-bilan">Numéro de carte:</p><input type="text"></label>
+                      <label for="" class="input-inline">
+                        <label for="" class="input-inline1" style="width: 100px;"><p id="span-bilan">Expiration:</p><input type="text" required></label>
+                        <label for="" class="input-inline1" style="width: 100px;"><p id="span-bilan">CVV:</p><input type="text" required></label>
+                    </label>
+                    <button type="submit" class="submit-btn">Payer:</button>
+                </form>
+            </div>
+        </section>
+
+
+    </main>
+</body>
+
+</html>
