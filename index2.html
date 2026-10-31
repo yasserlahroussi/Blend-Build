@@ -31,16 +31,16 @@
     </header>
     <p class="Progression">01 Personnaliser — 02 Récapitulatif — <span> 03 Paiement </span></p>
     <div class="titre-bilan1" id="titre-bilan" style="display: flex; flex-direction: column; gap: 10px;">
-        <h4>Votre panier</h4>
+        <h4 >Votre panier</h4>
         <h2>Votre commande, prête à partir.</h2>
-        <h6>Ajustez vos quantités, ajoutez un dernier produit, puis finalisez en quelques champs.</h6>
+        <h6 class="h6-titre-">Ajustez vos quantités, ajoutez un dernier produit, puis finalisez en quelques champs.</h6>
     </div>
     <main class="main2">
 
         <section>
             <div class="section-de-article">
                 <div class="titre-panier">
-                    <p>Votre panier</p>
+                    <p class="panier-titre">Votre panier</p>
                     <p id="total-article-de-panier"></p>
                 </div>
                 <br>
@@ -62,8 +62,8 @@
             <div class="model" id="model-id">
                 <div class="model-contenu">
                     <div>
-                        <label id="barre-de-recherche">
-                            Recherche:<input id="barre" type="text">
+                        <label style="border: none;display: flex;flex-direction: row;" id="barre-de-recherche">
+                            <input id="barre" type="text" placeholder="Recherche....">
                             <button id="close" style="width: 20px;height: 20px;">x</button>
                         </label>
                     </div>
@@ -74,27 +74,41 @@
         </section>
         <section class="section-de-paiment">
             <div class="input-de-paiment">
-                <form action="">
+                <form>
                     <p class="remarque-bilan">Paiement sécurisé</p>
                     <p class="h2-bilan">Vos informations</p>
-                    <label for="" class="input-inline">
-                        <label for="" class="input-inline1" style="width: 100px;"><p id="span-bilan">Prènom:</p><input type="text" required></label>
-                        <label for="" class="input-inline1" style="width: 100px;"><p id="span-bilan">Nom:</p><input type="text" required></label>
-                    </label>
-                    <label for="" class="input-inline">
-                    <label for=""><p id="span-bilan">E-mail:</p><input type="text"></label>
-                    <label for=""><p id="span-bilan">Adresse de livraison:</p><input type="text"></label>
-                    </label>
+                    <div class="info-perso">
+                        <label class="input-inline1" style="grid-area: input1;">
+                            <p id="span-bilan">Prènom</p><input type="text" required placeholder="Prènom...">
+                        </label>
+                        <label class="input-inline1" style="grid-area: input2;">
+                            <p id="span-bilan">Nom</p><input type="text" required placeholder="Nom...">
+                        </label>
+                        <label class="input-inline1" style="grid-area: input3;">
+                            <p id="span-bilan">E-mail</p><input type="email" placeholder="exemple@gmail.com">
+                        </label>
+                        <label class="input-inline1" style="grid-area: input4;">
+                            <p id="span-bilan">Adresse de livraison</p><input type="text"
+                                placeholder="Ville, quartier ...">
+                        </label>
+                    </div>
+
                     <br>
-                    <br> 
+                    <br>
                     <hr style="color: grey;">
                     <p class="h2-bilan">Carte bancaire</p>
-                    <label for="" class="input-inline"><p id="span-bilan">Numéro de carte:</p><input type="text"></label>
-                      <label for="" class="input-inline">
-                        <label for="" class="input-inline1" style="width: 100px;"><p id="span-bilan">Expiration:</p><input type="text" required></label>
-                        <label for="" class="input-inline1" style="width: 100px;"><p id="span-bilan">CVV:</p><input type="text" required></label>
+                    <div class="bank-info">
+                    <label class="input-inline" style="grid-area: input5;">
+                        <p id="span-bilan">Numéro de carte</p><input type="number" placeholder="XXXX-XXXX-XXXX-XXXX">
                     </label>
-                    <button type="submit" class="submit-btn">Payer:</button>
+                    <label class="input-inline1" style="grid-area: input6;">
+                        <p id="span-bilan">Expiration</p><input type="datetime" required placeholder="MM/AA">
+                    </label>
+                    <label class="input-inline1" style="grid-area: input7;">
+                        <p id="span-bilan">CVV</p><input type="number" required placeholder="XXX">
+                    </label>
+                    </div>
+                    <button type="submit" class="submit-btn">Payer</button>
                 </form>
             </div>
         </section>

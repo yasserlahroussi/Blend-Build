@@ -28,11 +28,9 @@ function addelement(famille, key) {
     const panier = document.getElementById("articles-panier")
     const div = document.createElement("div");
     div.className = "articles";
-    div.style = "display:flex ;justify-content: space-between;"
     const div1 = document.createElement("div")
     const image_article = document.createElement("img")
     image_article.className = "image-article"
-    image_article.style.width = "50px"
     image_article.setAttribute("src", famille[key].image)
     div1.append(image_article)
     const div2 = document.createElement("div")
@@ -41,7 +39,7 @@ function addelement(famille, key) {
     name_article.textContent = famille[key].name
     const price_article = document.createElement("div")
     price_article.className = "price-article"
-    price_article.textContent = famille[key].price
+    price_article.textContent = famille[key].price+" DH"
     const btn_remove = document.createElement("button")
     btn_remove.className = "remove"
     btn_remove.textContent = "remove"
@@ -58,8 +56,8 @@ function addelement(famille, key) {
     btn_plus.textContent = "+"
     btn_moin.className = "button-moin"
     btn_plus.className = "button-plus"
+    div3.className = "quantite-btn-"
     div3.append(btn_moin, quantity_article, btn_plus)
-    div3.style = "display: flex; align-items: baseline; align-items: end;"
     div.append(div1, div2, div3)
     div.id = `article${key}`
     panier.appendChild(div);

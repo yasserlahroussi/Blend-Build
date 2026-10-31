@@ -1,5 +1,3 @@
-
-
 const config = {
   base: {
     espresso: { name: "Espresso", price: 18 },
@@ -47,8 +45,12 @@ let input = document.querySelectorAll('input')
 let final = 0
 for (let i = 0; i < input.length; i++) {
   input[i].addEventListener('click', total1)
-}
 
+}
+for (let i = 0; i < input.length; i++) {
+  input[i].addEventListener('click', resultat22)
+
+}
 let totalGlobale = 0;
 function total1(event) {
   let total = 0;
@@ -62,9 +64,21 @@ function total1(event) {
   total_final.innerHTML = total
 
 }
+function resultat22(event) {
+  let resultat = 0
+  for (let i = 0; i < input.length; i++) {
+    if (input[i].checked) {
+      resultat += `<h6>${input[i].parentElement.querySelector("p").textContent}.</h6>`
+      console.log(resultat)
+    }
+    
+  }
+  
+}
 
 const bilan = document.querySelector('.bilan')
 const total_bilan = document.querySelector('.total_bilan')
+const resultat = document.getElementById("resultat-de-commande")
 
 
 function bilanTotal() {
@@ -78,7 +92,6 @@ bilan.innerHTML = ""
         
       </div>
     `
-
     }
 
   } total_bilan.innerHTML = ` <div> <p>Total</p><span>${totalGlobale},00 DH </span></div>`
@@ -86,7 +99,8 @@ bilan.innerHTML = ""
 }
 function page_suivant() {
   const base22 = document.getElementById('base1')
-  if (totalGlobale!=0 && base22.checked) {
+  const base2 = document.getElementById('base2')
+  if (totalGlobale!=0 && (base22.checked || base2.checked)) {
     
   const num1 = document.getElementById('number-one')
   const introduction = document.getElementById('Introduction');
