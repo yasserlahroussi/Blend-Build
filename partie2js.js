@@ -31,7 +31,6 @@ function addelement(famille, key) {
     const div1 = document.createElement("div")
     const image_article = document.createElement("img")
     image_article.className = "image-article"
-    image_article.style.width = "50px"
     image_article.setAttribute("src", famille[key].image)
     div1.append(image_article)
     const div2 = document.createElement("div")
@@ -40,7 +39,7 @@ function addelement(famille, key) {
     name_article.textContent = famille[key].name
     const price_article = document.createElement("div")
     price_article.className = "price-article"
-    price_article.textContent = famille[key].price
+    price_article.textContent = famille[key].price+" DH"
     const btn_remove = document.createElement("button")
     btn_remove.className = "remove"
     btn_remove.textContent = "remove"

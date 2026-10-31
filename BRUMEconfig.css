@@ -675,12 +675,14 @@ footer {
     padding: 20px;
 }
 .articles{
-    display:flex ;
-    justify-content: space-between;
-    padding: 20px 10px 20px 10px;
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 16px;
     border: 2px solid black;
-    margin-bottom:10px ;
-    border-radius:10px ;
+    margin-bottom: 10px;
+    border-radius: 10px;
 }
 .name-article{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -693,6 +695,8 @@ footer {
     border-radius: 9px;
     font-size: 11px;
     padding: 7px;
+    margin-top: 6px;
+    cursor: pointer;
 }
 .quantite-btn- button{
     border: none;
@@ -712,10 +716,12 @@ footer {
     color: #796A59;
 }
 .quantite-btn-{
+    display: flex;
+    align-items: stretch;
+    padding: 0;
+    gap: 0;
+    overflow: hidden;
     background-color: transparent;
-    color: white;
-    display: flex; 
-    margin-top: 70px;
     color: black;
     border: 2px solid black;
     border-radius: 10px;
@@ -924,7 +930,16 @@ footer {
     grid-template-areas: "input5 input5"
         "input6 input7";
 }
-
+.price-article{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: grey;
+    font-size: 13px;
+}
+.image-article{
+    width: 70px;
+    height: 70px;
+    border-radius: 20px;
+}
 .bank-info input {
     width: 100%;
     border-radius: 10px;
@@ -935,11 +950,7 @@ footer {
 .bank-info label {
     border: none;
 }
-
-@media (max-width: 480px) {
-    .model-contenu {
-        margin-top: 0;
-        padding: 16px;
-        border-radius: 16px;
-    }
+#span-bilan{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(152, 152, 152);
 }
