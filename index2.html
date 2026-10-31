@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="BRUMEconfig.css">
+    <script src="partie2js.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="en-tete-header">Du grain à votre tasse. Un café qui vous ressemble.</div>
+        <div>
+            <img src="Signature de marque.png" alt="logo de site web">
+            <nav>
+                <ul>
+                    <li><a href="#" id="active">L’atelier café</a></li>
+                    <li><a href="#">Notre savoir-faire</a></li>
+                    <li><a href="#">Besoin d’aide ?</a></li>
+                </ul>
+            </nav>
+            <div class="logo-panier">
+                <img class="Panier" src="Panier.png" alt="Panier">
+                <div id="number-one">1</div>
+            </div>
+        </div>
+        <br>
+        <hr>
+    </header>
+    <p class="Progression">01 Personnaliser — 02 Récapitulatif — <span> 03 Paiement </span></p>
+    <div class="titre-bilan1" id="titre-bilan" style="display: flex; flex-direction: column; gap: 10px;">
+        <h4 >Votre panier</h4>
+        <h2>Votre commande, prête à partir.</h2>
+        <h6 class="h6-titre-">Ajustez vos quantités, ajoutez un dernier produit, puis finalisez en quelques champs.</h6>
+    </div>
+    <main class="main2">
+
+        <section>
+            <div class="section-de-article">
+                <div class="titre-panier">
+                    <p class="panier-titre">Votre panier</p>
+                    <p id="total-article-de-panier"></p>
+                </div>
+                <br>
+
+                <div id="articles-panier">
+
+                </div>
+                <br>
+            </div>
+            <div
+                style="display: flex; justify-content: space-around;border: 3px dashed #000000;height: 64px;width: 90%; align-items: center;border-radius: 20px;margin: 5%;">
+                <button id="button-ajoute" style="border:none;background-color: transparent;margin: 20px;">+ Ajouter un
+                    autre produit</button>
+            </div>
+            <div id="total-bilan">
+                <div>Le total est:</div>
+                <div id="total-en-chifre"></div>
+            </div>
+            <div class="model" id="model-id">
+                <div class="model-contenu">
+                    <div>
+                        <label style="border: none;display: flex;flex-direction: row;" id="barre-de-recherche">
+                            <input id="barre" type="text" placeholder="Recherche....">
+                            <button id="close" style="width: 20px;height: 20px;">x</button>
+                        </label>
+                    </div>
+                    <div id="resultat-de-recherche">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section-de-paiment">
+            <div class="input-de-paiment">
+                <form>
+                    <p class="remarque-bilan">Paiement sécurisé</p>
+                    <p class="h2-bilan">Vos informations</p>
+                    <div class="info-perso">
+                        <label class="input-inline1" style="grid-area: input1;">
+                            <p id="span-bilan">Prènom:</p><input type="text" required placeholder="Prènom...">
+                        </label>
+                        <label class="input-inline1" style="grid-area: input2;">
+                            <p id="span-bilan">Nom:</p><input type="text" required placeholder="Nom...">
+                        </label>
+                        <label class="input-inline1" style="grid-area: input3;">
+                            <p id="span-bilan">E-mail:</p><input type="text" placeholder="exemple@gmail.com">
+                        </label>
+                        <label class="input-inline1" style="grid-area: input4;">
+                            <p id="span-bilan">Adresse de livraison:</p><input type="text"
+                                placeholder="Ville, quartier ...">
+                        </label>
+                    </div>
+
+                    <br>
+                    <br>
+                    <hr style="color: grey;">
+                    <p class="h2-bilan">Carte bancaire</p>
+                    <div class="bank-info">
+                    <label class="input-inline" style="grid-area: input5;">
+                        <p id="span-bilan">Numéro de carte:</p><input type="text" placeholder="XXXX-XXXX-XXXX-XXXX">
+                    </label>
+                    <label class="input-inline1" style="grid-area: input6;">
+                        <p id="span-bilan">Expiration:</p><input type="text" required placeholder="MM/AA">
+                    </label>
+                    <label class="input-inline1" style="grid-area: input7;">
+                        <p id="span-bilan">CVV:</p><input type="text" required placeholder="XXX">
+                    </label>
+                    </div>
+                    <button type="submit" class="submit-btn">Payer</button>
+                </form>
+            </div>
+        </section>
+
+
+    </main>
+</body>
+
+</html>
