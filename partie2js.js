@@ -39,7 +39,7 @@ function addelement(famille, key) {
     name_article.textContent = famille[key].name
     const price_article = document.createElement("div")
     price_article.className = "price-article"
-    price_article.textContent = famille[key].price+" DH"
+    price_article.textContent = famille[key].price + " DH"
     const btn_remove = document.createElement("button")
     btn_remove.className = "remove"
     btn_remove.textContent = "remove"
@@ -111,6 +111,7 @@ function remove_() {
     e.addEventListener("click", (e) => {
       const objet_key = e.currentTarget.dataset.category
       coffeeCart[objet_key].quantity = 0
+      coffeeCart.splice(objet_key, 1)
       // console.log(coffeeCart)
       let remove_target = e.currentTarget.closest(".articles")
       panier_article.removeChild(remove_target)
@@ -184,7 +185,7 @@ function recherche_element(e) {
   name.className = "name-ajout-"
   const div3_resultat = document.createElement("div")
   const ajout_article = document.createElement("button")
-  ajout_article.setAttribute("data-category" , `${e.id}`)
+  ajout_article.setAttribute("data-category", `${e.id}`)
   ajout_article.className = "btn_ajout--"
   ajout_article.id = "btn_ajout--"
   ajout_article.textContent = "+"
@@ -208,15 +209,15 @@ function add_element() {
       const image_add = document.querySelector(".image-search").dataset.category
       const ProdId = e.currentTarget.dataset.category
 
-      let targetProd =  coffeeProducts.find(p => p.id == ProdId);
+      let targetProd = coffeeProducts.find(p => p.id == ProdId);
       console.log(targetProd);
       objet = { id: targetProd.id, name: targetProd.name, price: targetProd.price, quantity: 1, image: image_add }
       // console.log(objet)
       //some katcheki ila 3la l2a9al kan element katrja3 true
-      let exists  = coffeeCart.find(p =>  p.id == objet.id );
-      console.log(exists, coffeeCart,targetProd)
+      let exists = coffeeCart.find(p => p.id == objet.id);
+      console.log(exists, coffeeCart, targetProd)
       if (exists == null) {
-      
+
         coffeeCart.push(objet)
         panier.textContent = ""
         for (const key in coffeeCart) {
@@ -240,3 +241,71 @@ function remove_addedproduct(target) {
   }
 
 }
+//5: formulaire:
+const text_input = document.querySelectorAll("#input-text")
+const input_cvv = document.querySelectorAll("#input-cvv")
+const input_date = document.querySelectorAll("#input-date")
+const input_num_bank = document.querySelectorAll("#input-num-bank")
+const input_email = document.querySelectorAll("#input-email")
+const btn_submit = document.getElementById("submit-form")
+let info_text
+let info_cvv
+let info_date
+let info_num_bank
+let info_email
+text_input.forEach((input) => {
+  input.addEventListener('input', (e) => {
+    info_text = e.target.value
+  })
+})
+input_cvv.forEach((input) => {
+  input.addEventListener('input', (e) => {
+    info_cvv = e.target.value
+  })
+})
+input_date.forEach((input) => {
+  input.addEventListener('input', (e) => {
+    info_date = e.target.value
+  })
+})
+input_num_bank.forEach((input) => {
+  input.addEventListener('input', (e) => {
+    info_num_bank = e.target.value
+  })
+})
+text_input.forEach((input) => {
+  input.addEventListener('input', (e) => {
+    info_text = e.target.value
+  })
+})
+input_email.forEach((input) => {
+  input.addEventListener('input', (e) => {
+    info_email = e.target.value
+  })
+})
+
+btn_submit.addEventListener('click', (e) => {
+  if (/^\S+@\S+\.\S+$/.test(info_email) &&
+    /^\d{3}$/.test(info_cvv) &&
+    /^[a-zA-ZÀ-ÿ\s'-]+$/.test(info_text)
+    && /^\d{4}$/.test(info_date)
+    && /^\d{16}$/.test(info_num_bank)) {
+    alert("Paiment validé , Merciii")
+  } else {
+    alert("eror")
+    e.preventDefault()
+  }
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
