@@ -111,8 +111,8 @@ function remove_() {
     e.addEventListener("click", (e) => {
       const objet_key = e.currentTarget.dataset.category
       coffeeCart[objet_key].quantity = 0
-      coffeeCart.splice(objet_key, 1)
-      // console.log(coffeeCart)
+      coffeeCart[objet_key] = {price:0,quantity:0}
+  
       let remove_target = e.currentTarget.closest(".articles")
       panier_article.removeChild(remove_target)
       total(coffeeCart)
@@ -204,16 +204,14 @@ function add_element() {
   document.querySelectorAll('.btn_ajout--').forEach((btn) => {
     let objet = {}
     btn.addEventListener("click", (e) => {
-      // const add = document.querySelector(".name-ajout-")
-      // const price_add = document.querySelector(".price_resultat")
+
       const image_add = document.querySelector(".image-search").dataset.category
       const ProdId = e.currentTarget.dataset.category
 
       let targetProd = coffeeProducts.find(p => p.id == ProdId);
       console.log(targetProd);
       objet = { id: targetProd.id, name: targetProd.name, price: targetProd.price, quantity: 1, image: image_add }
-      // console.log(objet)
-      //some katcheki ila 3la l2a9al kan element katrja3 true
+
       let exists = coffeeCart.find(p => p.id == objet.id);
       console.log(exists, coffeeCart, targetProd)
       if (exists == null) {
@@ -222,14 +220,15 @@ function add_element() {
         panier.textContent = ""
         for (const key in coffeeCart) {
           addelement(coffeeCart, key)
-          total(coffeeCart)
-          btn_moin_()
-          btn_plus_()
-          remove_()
+
         }
       }
       let target_container_to_remove = e.currentTarget.closest(".resultat")
       remove_addedproduct(target_container_to_remove)
+      total(coffeeCart)
+      btn_moin_()
+      btn_plus_()
+      remove_()
 
     });
 
