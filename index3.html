@@ -9,41 +9,51 @@
     <script src="libs/tailwind.js"></script>
 </head>
 
-<body>
-    <header>
+<body class="bg-[#F9F6EE] font-sans">
+    <header class="flex justify-around items-center p-10">
         <div>
-            <img src="" alt="">
-            <img src="" alt="">
+            <img class="w-16 md:w-32 lg:w-48" src="Signature de marque.png">
             <span></span>
         </div>
         <div>
-            <ul>
+            <ul class="flex gap-20">
                 <li><a href="">Catalogue</a></li>
                 <li><a href="">Nouveau produit</a></li>
                 <li><a href="">Commandes</a></li>
             </ul>
         </div>
+
     </header>
+    <hr>
     <main>
-        <section>
-            <div>
-                <div>
-                    <span>Back-office · Coffee Shop</span>
-                    <h2>Catalogue</h2>
-                    <h6> dans le catalogue</h6>
+        <section class="p-10">
+            <div class="flex justify-between items-center">
+                <div class="flex flex-col gap-5 p-10">
+                    <span class="text-xs text-[#3A4A33] ">Back-office · Coffee Shop</span>
+                    <h2 class="text-4xl">Catalogue</h2>
+                    <h6 class="text-sm text-[grey]"> dans le catalogue</h6>
                 </div>
                 <div>
-                    <button>+ Ajouter un produit</button>
+                    <button class="bg-[#3A4A33] p-4 text-[white] rounded-lg hover:bg-green-700">+ Ajouter un
+                        produit</button>
                 </div>
             </div>
-            <div>
+            <div id="produit-container">
 
             </div>
         </section>
-        <section>
+        <section class="p-10">
             <p>Catalogue · Coffee Shop</p>
             <h2>Créer un produit</h2>
-            
+
+            <div class="flex flex-col gap-5">
+                <progress class="progress w-56" value="0" max="100"></progress>
+                <progress class="progress w-56" value="10" max="100"></progress>
+                <progress class="progress w-56" value="40" max="100"></progress>
+                <progress class="progress w-56" value="70" max="100"></progress>
+                <progress class="progress w-56" value="100" max="100"></progress>
+            </div>
+
         </section>
     </main>
     <footer></footer>
