@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="BRUMECONFIG2.css">
     <title>Document</title>
     <script src="partie3.js" defer></script>
     <script src="libs/tailwind.js"></script>
@@ -26,8 +28,8 @@
     </header>
     <hr>
     <main>
-        <section class="p-10">
-            <div class="flex justify-between items-center">
+        <section class=>
+            <div class="flex  items-center justify-between ">
                 <div class="flex flex-col gap-5 p-10">
                     <span class="text-xs text-[#3A4A33] ">Back-office · Coffee Shop</span>
                     <h2 class="text-4xl">Catalogue</h2>
@@ -42,16 +44,40 @@
 
             </div>
         </section>
-        <section class="p-10">
+        <section class=" flex justify-centre flex-col">
             <p>Catalogue · Coffee Shop</p>
             <h2>Créer un produit</h2>
 
-            <div class="flex flex-col gap-5">
-                <progress class="progress w-56" value="0" max="100"></progress>
-                <progress class="progress w-56" value="10" max="100"></progress>
-                <progress class="progress w-56" value="40" max="100"></progress>
-                <progress class="progress w-56" value="70" max="100"></progress>
-                <progress class="progress w-56" value="100" max="100"></progress>
+            <div>
+                <div class="flex justify-center items-center">
+                    <ul class="steps">
+                        <li class="step step-primary">Informations générales</li>
+                        <li class="step">Caractéristiques et options</li>
+                        <li class="step">Récapitulatif</li>
+                    </ul>
+                </div>
+                <div class="bg-base-100" >
+                    <form action="">
+                        <div class=" p-10 grid auto-rows-fr">
+                            <h2 class="flex flex-start">Informations générales</h2>
+                            <label for="">Nom de la boisson:<input type="text"></label>
+                            <label for="">Prix de base (DH)<input type="text"></label>
+                            <label for="">Description<input type="text"></label>
+                            <label for="">Image du produit (lien)<input type="text"></label>
+                            <fieldset class="fieldset bg-base-100 border-base-300 rounded-box w-64 border p-4">
+                                <legend class="fieldset-legend">Login options</legend>
+                                <label class="label">
+                                    <input type="checkbox" checked="checked" class="checkbox" />
+                                    Remember me
+                                </label>
+                            </fieldset>
+                            <label for="">Pourcentage de réduction<input type="text"></label>
+                            <label for="">date de fin de promotion<input type="text"></label>
+                        </div>
+                        <div></div>
+                        <div></div>
+                    </form>
+                </div>
             </div>
 
         </section>
