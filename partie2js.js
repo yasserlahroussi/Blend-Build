@@ -111,8 +111,8 @@ function remove_() {
     e.addEventListener("click", (e) => {
       const objet_key = e.currentTarget.dataset.category
       coffeeCart[objet_key].quantity = 0
-      coffeeCart[objet_key] = {price:0,quantity:0}
-  
+      coffeeCart[objet_key] = { price: 0, quantity: 0 }
+
       let remove_target = e.currentTarget.closest(".articles")
       panier_article.removeChild(remove_target)
       total(coffeeCart)
@@ -215,12 +215,11 @@ function add_element() {
       let exists = coffeeCart.find(p => p.id == objet.id);
       console.log(exists, coffeeCart, targetProd)
       if (exists == null) {
-
+        console.log("here")
         coffeeCart.push(objet)
         panier.textContent = ""
         for (const key in coffeeCart) {
           addelement(coffeeCart, key)
-
         }
       }
       let target_container_to_remove = e.currentTarget.closest(".resultat")
@@ -229,10 +228,13 @@ function add_element() {
       btn_moin_()
       btn_plus_()
       remove_()
+    }
+    );
 
-    });
+  }
 
-  });
+  );
+
 }
 function remove_addedproduct(target) {
   if (resultat_de_recherche.contains(target)) {
