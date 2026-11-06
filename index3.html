@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <script src="partie3.js" defer></script>
+    <script src="libs/tailwind.js"></script>
+</head>
+
+<body class="bg-[#F9F6EE] font-sans">
+    <header class="flex justify-around items-center p-10">
+        <div>
+            <img class="w-16 md:w-32 lg:w-48" src="Signature de marque.png">
+            <span></span>
+        </div>
+        <div>
+            <ul class="flex gap-20">
+                <li><a href="">Catalogue</a></li>
+                <li><a href="">Nouveau produit</a></li>
+                <li><a href="">Commandes</a></li>
+            </ul>
+        </div>
+
+    </header>
+    <hr>
+    <main>
+        <section id="section1">
+            <div class="flex  items-center justify-between ">
+                <div class="flex flex-col gap-5 p-10">
+                    <span class="text-xs text-[#3A4A33] ">Back-office · Coffee Shop</span>
+                    <h2 class="text-4xl">Catalogue</h2>
+                    <h6 class="text-sm text-[grey]"> dans le catalogue</h6>
+                </div>
+                <div>
+                    <button class="bg-[#3A4A33] p-4 text-[white] rounded-lg hover:bg-green-700" id="btn-ajouter">+ Ajouter un
+                        produit</button>
+                </div>
+            </div>
+            <div id="produit-container">
+
+            </div>
+        </section>
+        <section class=" flex justify-centre flex-col hidden" id="section2">
+            <p>Catalogue · Coffee Shop</p>
+            <h2>Créer un produit</h2>
+
+            <div>
+                <div class="flex justify-center items-center">
+                    <ul class="steps">
+                        <li class="step step-primary">Informations générales</li>
+                        <li class="step">Caractéristiques et options</li>
+                        <li class="step">Récapitulatif</li>
+                    </ul>
+                </div>
+
+                <form action="">
+                    <div class="step1 p-10 grid auto-rows-fr" id="formulaire-1">
+                        <h2 class="flex flex-start">Informations générales</h2>
+                        <label for="">Nom de la boisson:<input type="text" id="name-produit">
+                            <span id="name-eror" class="hidden">input invalid</span>
+                        </label>
+                        <label for="">
+                            Prix de base (DH)<input type="text" id="prix-produit">
+                            <span id="num-eror" class="hidden">input invalid</span>
+                        </label>
+                        <label for="">
+                            Description<input type="text" id="text-produit">
+                            <span id="description-eror" class="hidden">input invalid</span>
+                        </label>
+                        <label for="">
+                            Image du produit (lien)<input type="text" id="image-produit">
+                            <span id="image-eror" class="hidden">input invalid</span>
+                        </label>
+                        <fieldset class="fieldset bg-base-100 border-base-300 rounded-box w-64 border p-4">
+                            <legend class="fieldset-legend">Login options</legend>
+                            <label class="label">
+                                <input type="checkbox" class="checkbox " id="btn_promo" />
+                                Remember me
+                            </label>
+                        </fieldset>
+                        <label for="" style="display: none;" id="promo">Pourcentage de réduction<input id="pourcentage"
+                                type="number" placeholder="number inferieur a 100">
+                            <span id="pourcentage-eror" class="hidden">input invalid</span>
+                        </label>
+                        <label for="" style="display: none;" id="promo">date de fin de promotion<input id="date"
+                                type="date">
+                            <span id="date-eror" class="hidden">input invalid</span>
+                        </label>
+                        <button id="btn-suivant-1">suivant</button>
+                    </div>
+                    <div class="step2 p-10 grid auto-rows-fr hidden" id="formulaire2">
+                        <h2>Caractéristiques et options</h2>
+                        <label for="">
+                            temperature:
+                            <label for="" id="temperature-chois">
+                                froid
+                                <input id="tempreature" type="radio" name="temperature">
+                            </label>
+                            <label for="" id="temperature-chois">
+                                chaude
+                                <input id="tempreature" type="radio" name="temperature">
+                            </label>
+                        </label>
+                        <label for="">
+                            taille:
+                            <label for="" id="taille-choisi">
+                                Small
+                                <input type="checkbox" id="taille">
+                            </label>
+                            <label for="" id="taille-choisi">
+                                Medium
+                                <input type="checkbox" id="taille">
+                            </label>
+                            <label for="" id="taille-choisi">
+                                Large
+                                <input type="checkbox" id="taille">
+                            </label>
+                        </label>
+                        <label for="">
+                            Options de lait
+                            <label for="" id="lait-choisi">
+                                Vache
+                                <input type="checkbox" id="lait">
+                            </label>
+                            <label for="" id="lait-choisi">
+                                Avoine
+                                <input type="checkbox" id="lait">
+                            </label>
+                            <label for="" id="lait-choisi">
+                                Soja
+                                <input type="checkbox" id="lait">
+                            </label>
+                            <label for=""id="lait-choisi">
+                                Amande
+                                <input type="checkbox" id="lait">
+                            </label>
+                        </label>
+                        <label for="">
+                            supplement
+                            <label for="" id="supplement-choisi">
+                                Vanille 
+                                <input type="checkbox" id="supplement">
+                            </label>
+                            <label for="" id="supplement-choisi">
+                                Caramel
+                                <input type="checkbox" id="supplement">
+                            </label>
+                            <label for="" id="supplement-choisi">
+                                Noisette
+                                <input type="checkbox" id="supplement">
+                            </label>
+                        </label>
+                        <button id="retour">retour</button>
+                        <button id="btn-suivant-2">suivant</button>
+                    </div>
+                    <div class="step3 hidden" id="formulaire3">
+                        <h2>Récapitulatif</h2>
+                        <p>Vérifiez les informations avant de confirmer la création.</p>
+                        <div id="ticket-de-review">
+
+                        </div>
+                        <button id="btn-retourrr">retour</button>
+                        <button id="btn-confirm">valider</button>
+                    </div>
+                </form>
+
+            </div>
+
+        </section>
+    </main>
+    <footer></footer>
+</body>
+
+</html>

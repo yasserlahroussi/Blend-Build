@@ -1,0 +1,8 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: light --default;
+}
+input{
+    background-color: white;
+    border: 2px solid black;
+}
