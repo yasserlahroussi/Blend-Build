@@ -206,7 +206,6 @@ document.querySelectorAll('#taille').forEach((check) => {
     }
   })
 })
-
 let array_lait = []
 let check_lait
 const laiiiit = document.querySelectorAll('#lait')
