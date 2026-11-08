@@ -223,9 +223,6 @@ document.querySelectorAll('#lait').forEach((check) => {
     }
   })
 })
-
-
-
 let array_supplement = []
 let check_supplement
 const suuuppp = document.querySelectorAll('#supplement')
@@ -408,6 +405,10 @@ btn_ajouterr.addEventListener('click', (e) => {
   pro2.classList.remove("step-primary")
   pro3.classList.remove("step-primary")
   console.log(name_produit)
+  name_produit.value=""
+  prix_produit.value=""
+  text_input.value=""
+  image_imput.value=""
   check_lait = false
   checkkk_name = false
   check_image = false
