@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <script src="partie3.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@latest/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+</head>
+
+<body class="bg-[#F9F6EE] font-sans">
+    <header class="flex justify-around items-center p-10">
+        <div>
+            <img class="w-16 md:w-32 lg:w-48" src="Signature de marque.png">
+            <span></span>
+        </div>
+        <div>
+            <ul class="flex gap-20">
+                <li><a href="#" id="onglet-1" class="text-[green]">Catalogue</a></li>
+                <li><a href="#" id="onglet-2">Nouveau produit</a></li>
+                <li><a href="#">Commandes</a></li>
+            </ul>
+        </div>
+
+    </header>
+    <hr>
+    <main>
+        <section id="section1" class="p-10">
+            <div class="flex  items-center justify-between ">
+                <div class="flex flex-col gap-5 p-10">
+                    <span class="text-xs text-[#3A4A33] ">Back-office · Coffee Shop</span>
+                    <h2 class="text-4xl text-[black]">Catalogue</h2>
+                    <h6 class="text-sm text-[grey]"> dans le catalogue</h6>
+                </div>
+                <div>
+                    <button class="bg-[#3A4A33] p-4 text-[white] rounded-lg hover:bg-green-700" id="btn-ajouter">+
+                        Ajouter un
+                        produit</button>
+                </div>
+            </div>
+            <div id="produit-container" class="grid grid-cols-3 gap-4">
+
+            </div>
+        </section>
+        <section class=" flex justify-centre flex-col p-10 gap-5 hidden " id="section2">
+            <p class="text-xs text-[#3A4A33] ">Catalogue · Coffee Shop</p>
+            <h2 class="text-4xl text-[black]">Créer un produit</h2>
+
+            <div class="flex justify-centre items-center flex-col">
+                <div class="flex flex-col items-center w-full max-w-md mx-auto mb-6 gap-5
+                ">
+                    <progress class="progress progress-success w-62" id="progresss1" value="20" max="100"></progress>
+                    <progress class="progress progress-success w-62 hidden" id="progresss2" value="50"
+                        max="100"></progress>
+                    <progress class="progress progress-success w-62 hidden" id="progresss3" value="90"
+                        max="100"></progress>
+                    <ul class="steps">
+                        <li id="step-progression1" class="step step-primary">Informations générales</li>
+                        <li id="step-progression2" class="step">Caractéristiques et options </li>
+                        <li id="step-progression3" class="step">Récapitulatif</li>
+                    </ul>
+                </div>
+                <form>
+                    <div class="flex flex-col gap-6 bg-white p-8 rounded-2xl shadow-lg w-full max-w-xl mx-auto"
+                        id="formulaire-1">
+                        <h2 class="text-xl font-bold text-gray-800 mb-2">Informations générales</h2>
+                        <div class="flex flex-col gap-1.5">
+                            <label for="name-produit" class="text-sm font-semibold text-gray-700">Nom de la
+                                boisson:</label>
+                            <input type="text" id="name-produit" placeholder="Nom ..."
+                                class="w-full px-4 py-2.5 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-amber-500 text-black">
+                            <span id="name-eror" class="hidden text-xs text-red-500 font-medium">input invalid</span>
+                        </div>
+                        <div class="flex flex-col gap-1.5">
+                            <label for="prix-produit" class="text-sm font-semibold text-gray-700">Prix de base
+                                (DH)</label>
+                            <input type="text" id="prix-produit" placeholder="....DH"
+                                class="w-full px-4 py-2.5 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-amber-500 text-black">
+                            <span id="num-eror" class="hidden text-xs text-red-500 font-medium">input invalid</span>
+                        </div>
+                        <div class="flex flex-col gap-1.5">
+                            <label for="text-produit" class="text-sm font-semibold text-gray-700">Description: </label>
+                            <input type="text" id="text-produit" placeholder="Decris un peu "
+                                class="w-full px-4 py-2.5 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus.ring-amber-500 text-black">
+                            <span id="description-eror" class="hidden text-xs text-red-500 font-medium">input
+                                invalid</span>
+                        </div>
+                        <div class="flex flex-col gap-1.5">
+                            <label for="image-produit" class="text-sm font-semibold text-black">Image du produit
+                                (lien) :</label>
+                            <input type="text" id="image-produit" placeholder="Votre lien ..."
+                                class="w-full px-4 py-2.5 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus.ring-amber-500 text-black">
+                            <span id="image-eror" class="hidden text-xs text-red-500 font-medium">input invalid</span>
+                        </div>
+                        <fieldset
+                            class="fieldset bg-base-100 border-base-300 rounded-box w-64 border p-4 flex items-center justify-around gap-1.5">
+                            <label class="label" for="btn_promo">promo </label>
+                            <input type="checkbox" class="checkbox " id="btn_promo" />
+                        </fieldset>
+                        <div class="flex flex-col gap-1.5">
+                            <div style="display: none;" id="promo">
+                                <label for="pourcentage" class="text-sm font-semibold text-gray-700">Pourcentage de
+                                    réduction</label>
+                                <input id="pourcentage" type="number" placeholder="Number Inferieur à 100"
+                                    class="w-full px-4 py-2.5 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus.ring-amber-500 text-black">
+                                <span id="pourcentage-eror" class="hidden text-xs text-red-500 font-medium">input
+                                    invalid</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-1.5">
+                            <div style="display: none;" id="promo">
+                                <label for="date" class="text-sm font-semibold text-gray-700">date de fin de promotion :
+                                </label>
+                                <input id="date" type="date"
+                                    class="w-full px-4 py-2.5 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus.ring-amber-500 text-black">
+                                <span id="date-eror" class="hidden text-xs text-red-500 font-medium">input
+                                    invalid</span>
+                            </div>
+                        </div>
+                        <button id="btn-suivant-1"
+                            class="w-full bg-amber-600 hover:bg-amber-700 text-white font-semibold py-3 rounded-xl transition duration-200 shadow-md">suivant</button>
+                    </div>
+                    <div class="step2 hidden flex flex-col gap-6 bg-white p-8 rounded-2xl shadow-lg w-full max-w-xl mx-auto"
+                        id="formulaire2">
+                        <h2 class="text-xl font-bold text-gray-800 mb-2">Caractéristiques et options</h2>
+
+                        <div
+                            class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-gray-50 p-5 rounded-xl border border-gray-100">
+                            <div class="flex flex-col gap-3">
+
+                                <label for="TEMP" class="text-sm font-semibold text-gray-700">Temperature:</label>
+                                <div class="flex flex-col gap-2">
+
+                                    <label for="TEMP" id="temperature-chois"
+                                        class="flex items-center gap-3 cursor-pointer text-sm font-medium text-gray-700 hover:text-amber-700 transition">
+                                        froid
+                                        <input class="tempreature" type="radio" name="temperature"
+                                            class="w-4 h-4 text-amber-600 focus:ring-amber-500" value="froid">
+                                    </label>
+                                    <label for="TEMP" id="temperature-chois"
+                                        class="flex items-center gap-3 cursor-pointer text-sm font-medium text-gray-700 hover:text-amber-700 transition">
+                                        chaude
+                                        <input class="tempreature" type="radio" name="temperature"
+                                            class=" w-4 h-4 text-amber-600 focus:ring-amber-500">
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <label for="range" id="range-affiche"
+                                    class="text-sm font-semibold text-gray-700">Intensité : </label>
+                                <div class="w-full max-w-xs">
+                                    <input type="range" id="range" min="1" max="10" class="range" />
+                                    <div class="flex justify-between px-2.5 mt-2 text-xs">
+                                        <span>|</span>
+                                        <span>|</span>
+                                        <span>|</span>
+                                        <span>|</span>
+                                        <span>|</span>
+                                        <span>|</span>
+                                        <span>|</span>
+                                        <span>|</span>
+                                        <span>|</span>
+                                        <span>|</span>
+                                    </div>
+                                    <div class="flex justify-between px-2.5 mt-2 text-xs">
+                                        <span>1</span>
+                                        <span>2</span>
+                                        <span>3</span>
+                                        <span>4</span>
+                                        <span>5</span>
+                                        <span>6</span>
+                                        <span>7</span>
+                                        <span>8</span>
+                                        <span>9</span>
+                                        <span>10</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label class="text-sm font-semibold text-gray-700">
+                                Taille:
+                                <div class="flex flex-wrap gap-4">
+                                    <label id="taille-choisi"
+                                        class="flex items-center gap-2 cursor-pointer bg-gray-50 px-4 py-2 border border-gray-200 rounded-lg hover:border-amber-500 transition">
+                                        Small
+                                        <input type="checkbox" id="taille"
+                                            class="w-4 h-4 text-amber-600 rounded focus:ring-amber-500">
+                                    </label>
+                                    <label id="taille-choisi"
+                                        class="flex items-center gap-2 cursor-pointer bg-gray-50 px-4 py-2 border border-gray-200 rounded-lg hover:border-amber-500 transition">
+                                        Medium
+                                        <input type="checkbox" id="taille"
+                                            class="w-4 h-4 text-amber-600 rounded focus:ring-amber-500">
+                                    </label>
+                                    <label id="taille-choisi"
+                                        class="flex items-center gap-2 cursor-pointer bg-gray-50 px-4 py-2 border border-gray-200 rounded-lg hover:border-amber-500 transition">
+                                        Large
+                                        <input type="checkbox" id="taille"
+                                            class="w-4 h-4 text-amber-600 rounded focus:ring-amber-500">
+                                    </label>
+                            </label>
+
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label class="text-sm font-semibold text-gray-700">
+                            Options de lait :
+                        </label>
+                        <div class="flex flex-wrap gap-4">
+                            <label id="lait-choisi"
+                                class=" text-sm font-medium text-gray-700 flex items-center gap-2 cursor-pointer bg-gray-50 px-4 py-2 border border-gray-200 rounded-lg hover:border-amber-500 transition">
+                                Vache
+                                <input type="checkbox" id="lait"
+                                    class="w-4 h-4 text-amber-600 bg-gray-100 border-gray-300 rounded focus:ring-amber-500 cursor-pointer">
+                            </label>
+                            <label id="lait-choisi"
+                                class=" text-sm font-medium text-gray-700 flex items-center gap-2 cursor-pointer bg-gray-50 px-4 py-2 border border-gray-200 rounded-lg hover:border-amber-500 transition">
+                                Avoine
+                                <input type="checkbox" id="lait"
+                                    class="w-4 h-4 text-amber-600 rounded focus:ring-amber-500">
+                            </label>
+                            <label id="lait-choisi"
+                                class="text-sm font-medium text-gray-700 flex items-center gap-2 cursor-pointer bg-gray-50 px-4 py-2 border border-gray-200 rounded-lg hover:border-amber-500 transition">
+                                Soja
+                                <input type="checkbox" id="lait"
+                                    class="w-4 h-4 text-amber-600 rounded focus:ring-amber-500">
+                            </label>
+                            <label id="lait-choisi"
+                                class="text-sm font-medium text-gray-700 flex items-center gap-2 cursor-pointer bg-gray-50 px-4 py-2 border border-gray-200 rounded-lg hover:border-amber-500 transition">
+                                Amande
+                                <input type="checkbox" id="lait"
+                                    class="w-4 h-4 text-amber-600 rounded focus:ring-amber-500">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label class="text-sm font-semibold text-gray-700">
+                            Supplement :</label>
+                        <div class="flex flex-wrap gap-4">
+                            <label id="supplement-choisi"
+                                class=" text-sm font-medium text-gray-700 flex items-center gap-2 cursor-pointer bg-gray-50 px-4 py-2 border border-gray-200 rounded-lg hover:border-amber-500 transition">
+                                Vanille
+                                <input type="checkbox" id="supplement"
+                                    class="w-4 h-4 text-amber-600 bg-gray-100 border-gray-300 rounded focus:ring-amber-500 cursor-pointer">
+                            </label>
+                            <label for="" id="supplement-choisi"
+                                class=" text-sm font-medium text-gray-700 flex items-center gap-2 cursor-pointer bg-gray-50 px-4 py-2 border border-gray-200 rounded-lg hover:border-amber-500 transition">
+                                Caramel
+                                <input type="checkbox" id="supplement"
+                                    class="w-4 h-4 text-amber-600 bg-gray-100 border-gray-300 rounded focus:ring-amber-500 cursor-pointer">
+                            </label>
+                            <label for="" id="supplement-choisi"
+                                class=" text-sm font-medium text-gray-700 flex items-center gap-2 cursor-pointer bg-gray-50 px-4 py-2 border border-gray-200 rounded-lg hover:border-amber-500 transition">
+                                Noisette
+                                <input type="checkbox" id="supplement"
+                                    class="w-4 h-4 text-amber-600 bg-gray-100 border-gray-300 rounded focus:ring-amber-500 cursor-pointer">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="flex justify-around">
+                        <button id="retour"
+                            class="w-full hover:bg-red-500 bg-red-700 border text-white border-red-100 rounded-lg items-center p-2">Retour</button>
+                        <button id="btn-suivant-2"
+                            class="w-full hover:bg-green-500 bg-green-700 text-white border border-green-100 rounded-lg items-center p-2">Suivant</button>
+                    </div>
+            </div>
+            <div class="step3 flex flex-col gap-6 bg-white p-8 rounded-2xl shadow-lg w-full max-w-xl mx-auto"
+                id="formulaire3">
+                <h2 class="text-xl font-bold text-gray-800 mb-2">Récapitulatif</h2>
+                <p class="text-xs text-[#3A4A33] ">Vérifiez les informations avant de confirmer la création.</p>
+                <div id="ticket-de-review">
+
+                </div>
+                <div class="flex">
+                    <button id="btn-retourrr"
+                        class="w-full hover:bg-red-500 bg-red-700 border text-white border-red-100 rounded-lg items-center p-2">Retour</button>
+                    <button id="btn-confirm"
+                        class="w-full hover:bg-green-500 bg-green-700 text-white border border-green-100 rounded-lg items-center p-2">Valider</button>
+                </div>
+            </div>
+            </form>
+
+            </div>
+
+        </section>
+    </main>
+    <footer></footer>
+</body>
+
+</html>
